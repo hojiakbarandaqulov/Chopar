@@ -1,6 +1,7 @@
 package org.example.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.example.enums.ProfileRole;
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
+//@Builder
 @Entity
 @Table(name = "profile")
 public class ProfileEntity extends BaseEntity {
@@ -38,15 +40,6 @@ public class ProfileEntity extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private ProfileRole role;
-
-    @Column(name = "visible")
-    private Boolean visible = Boolean.TRUE;
-
-    @Column(name = "created_date")
-    private LocalDateTime createdDate;
-
-    @Column(name = "updated_date")
-    private LocalDateTime updatedDate;
 
     @Column(name = "photo_id")
     private Integer photoId;
