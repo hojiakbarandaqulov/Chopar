@@ -54,11 +54,10 @@ public class SecurityConfig {
                     .requestMatchers("/swagger-ui/**").permitAll()
                     .requestMatchers("/webjars/**").permitAll()
                     .requestMatchers("/swagger-ui.html").permitAll()
-                    /*.requestMatchers("/auth/registration").permitAll()
-                    .requestMatchers(("/auth/verification/**")).permitAll()
-                    .requestMatchers("/auth/login").permitAll()
-                    .requestMatchers("/auth/registration").permitAll()
-                    .requestMatchers("/tag/any/**").permitAll()*/
+
+                    .requestMatchers("/api/v1/auth/login/**").permitAll()
+                    .requestMatchers("/api/v1/auth/registration/**").permitAll()
+                    .requestMatchers("/api/v1/auth/**").permitAll()
                     .anyRequest()
                     .authenticated();
         });

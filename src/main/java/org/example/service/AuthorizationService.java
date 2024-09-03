@@ -6,18 +6,20 @@ import org.example.dto.auth.AuthorizationResponseDTO;
 import org.example.dto.auth.LoginDTO;
 import org.example.dto.auth.RegistrationDTO;
 import org.example.entity.ProfileEntity;
+import org.example.enums.LanguageEnum;
 import org.example.enums.ProfileRole;
 import org.example.enums.ProfileStatus;
 import org.example.exp.AppBadException;
 import org.example.repository.ProfileRepository;
 import org.example.util.JwtUtil;
 import org.example.util.MD5Util;
-import org.example.util.RandomUtil;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Locale;
 import java.util.Optional;
+
 @Slf4j
 @Service
 public class AuthorizationService {
@@ -25,24 +27,26 @@ public class AuthorizationService {
     private final ProfileRepository profileRepository;
     private final MailSenderService mailSenderService;
     private final EmailHistoryService emailHistoryService;
+    private final ResourceBundleMessageSource resourceBundleMessageSource;
 
-    public AuthorizationService(ProfileRepository profileRepository, MailSenderService mailSenderService, EmailHistoryService emailHistoryService) {
+    public AuthorizationService(ProfileRepository profileRepository, MailSenderService mailSenderService, EmailHistoryService emailHistoryService, ResourceBundleMessageSource resourceBundleMessageSource) {
         this.mailSenderService = mailSenderService;
         this.emailHistoryService = emailHistoryService;
         this.profileRepository = profileRepository;
+        this.resourceBundleMessageSource = resourceBundleMessageSource;
     }
 
     public ApiResponse<String> registration(RegistrationDTO dto) {
         Optional<ProfileEntity> profile = profileRepository.findByEmailAndVisibleTrue(dto.getEmail());
-        if (profile.isPresent()){
+        if (profile.isPresent()) {
             log.warn("Email already exists email => {}", dto.getEmail());
             throw new AppBadException("Email already exists");
         }
-        ProfileEntity entity=new ProfileEntity();
+        ProfileEntity entity = new ProfileEntity();
         entity.setName(dto.getName());
         entity.setSurname(dto.getSurname());
         entity.setEmail(dto.getEmail());
-        entity.setPassword(dto.getPassword());
+        entity.setPassword(MD5Util.getMD5(dto.getPassword()));
         entity.setStatus(ProfileStatus.REGISTRATION);
         entity.setRole(ProfileRole.ROLE_USER);
         entity.setCreatedDate(LocalDateTime.now());
@@ -53,7 +57,7 @@ public class AuthorizationService {
 
     public void sendRegistrationEmail(Long profileId, String email) {
         // send email
-        String url = "http://localhost:8080/auth/verification/" + profileId;
+        String url = "http://localhost:8080/api/v1/auth/verification/" + profileId;
         String formatText = "<style>\n" +
                 "    a:link, a:visited {\n" +
                 "        background-color: #f44336;\n" +
@@ -69,7 +73,7 @@ public class AuthorizationService {
                 "    }\n" +
                 "</style>\n" +
                 "<div style=\"text-align: center\">\n" +
-                "    <h1>Welcome to kun.uz web portal</h1>\n" +
+                "    <h1>Welcome to Chopar web portal</h1>\n" +
                 "    <br>\n" +
                 "    <p>Please button lick below to complete registration</p>\n" +
                 "    <div style=\"text-align: center\">\n" +
@@ -81,34 +85,34 @@ public class AuthorizationService {
     }
 
     // authorizationVerification
-    public ApiResponse authorizationVerification(Long userId) {
+    public String authorizationVerification(Long userId, LanguageEnum language) {
         Optional<ProfileEntity> optional = profileRepository.findById(userId);
         if (optional.isEmpty()) {
-            throw new AppBadException("User not found");
+            String message = resourceBundleMessageSource.getMessage("user.not.found", null, new Locale(language.name()));
+            throw new AppBadException(message);
         }
 
         ProfileEntity entity = optional.get();
         if (!entity.getVisible() || !entity.getStatus().equals(ProfileStatus.REGISTRATION)) {
-            throw new AppBadException("Registration not completed");
+            String message = resourceBundleMessageSource.getMessage("registration.not.completed", null, new Locale(language.name()));
+            throw  new AppBadException(message);
         }
 
         profileRepository.updateStatus(userId, ProfileStatus.ACTIVE);
-        return ApiResponse.ok("Success");
+//        return ApiResponse.ok("Success");
+        return resourceBundleMessageSource.getMessage("Success", null, new Locale(language.name()));
+
     }
 
     //login email
     public ApiResponse<AuthorizationResponseDTO> login(LoginDTO dto) {
-        Optional<ProfileEntity> optional = profileRepository.findByEmailAndVisibleTrue(
-                dto.getEmail());
+        Optional<ProfileEntity> optional = profileRepository.findByEmailAndPasswordAndVisibleTrue(
+                dto.getEmail(), MD5Util.getMD5(dto.getPassword()));
         if (optional.isEmpty()) {
             throw new AppBadException("profile not found");
         }
 
         ProfileEntity entity = optional.get();
-        if (entity.getPassword().equals(MD5Util.getMD5(dto.getPassword()))) {
-            throw new AppBadException("password does not match");
-        }
-
         if (!entity.getStatus().equals(ProfileStatus.ACTIVE)) {
             throw new AppBadException("Wrong status");
         }
@@ -118,7 +122,7 @@ public class AuthorizationService {
         responseDTO.setName(entity.getName());
         responseDTO.setSurname(entity.getSurname());
         responseDTO.setRole(entity.getRole());
-        responseDTO.setJwt(JwtUtil.encode(responseDTO.getId(), entity.getEmail(),responseDTO.getRole()));
+        responseDTO.setJwt(JwtUtil.encode(responseDTO.getId(), entity.getEmail(), responseDTO.getRole()));
         return ApiResponse.ok(responseDTO);
     }
 

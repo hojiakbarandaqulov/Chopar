@@ -1,0 +1,23 @@
+### registration
+POST http://localhost:8080/api/v1/auth/registration
+Content-Type: application/json
+
+{
+  "name": "Vali",
+  "surname": "Eshmat",
+  "email": "codeuz91@gmail.com",
+  "password": "1234"
+}
+
+
+### login
+POST http://localhost:8080/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "email": "hojiakbarandaqulov5@gmail.com",
+  "password": "1234"
+}
+
+### verification
+GET http://localhost:8080/api/v1/auth/verification/7

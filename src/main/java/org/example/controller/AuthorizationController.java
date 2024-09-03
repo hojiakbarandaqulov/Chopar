@@ -7,8 +7,11 @@ import org.apache.tomcat.util.http.parser.Authorization;
 import org.example.dto.ApiResponse;
 import org.example.dto.auth.LoginDTO;
 import org.example.dto.auth.RegistrationDTO;
+import org.example.enums.LanguageEnum;
 import org.example.service.AuthorizationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
@@ -23,10 +26,10 @@ public class AuthorizationController {
     }
 
     @PostMapping("/registration")
-    @Operation( summary = "Registration", description = "Api for profile registration")
+    @Operation(summary = "Registration", description = "Api for profile registration")
     public ResponseEntity<ApiResponse<?>> registrationEmail(@Valid @RequestBody RegistrationDTO dto) {
         ApiResponse<String> body = authorizationService.registration(dto);
-        log .info("Registration name = {} email = {}",dto.getName(), dto.getEmail());
+        log.info("Registration name = {} email = {}", dto.getName(), dto.getEmail());
         return ResponseEntity.ok().body(body);
     }
 
@@ -37,12 +40,12 @@ public class AuthorizationController {
     }
 
     @GetMapping("/verification/{userId}")
-    public ResponseEntity<ApiResponse<?>> verification(@PathVariable("userId") Long userId) {
-        ApiResponse<?> response = authorizationService.authorizationVerification(userId);
+    public ResponseEntity<String> verification(@PathVariable("userId") Long userId, LanguageEnum language) {
+        String response = authorizationService.authorizationVerification(userId, language);
         return ResponseEntity.ok().body(response);
     }
 
-    @GetMapping("/registration/resend/{email}")
+    @GetMapping("/resend/{email}")
     public ResponseEntity<ApiResponse<?>> registrationResend(@PathVariable("email") String email) {
         ApiResponse<?> response = authorizationService.registrationResendEmail(email);
         return ResponseEntity.ok().body(response);

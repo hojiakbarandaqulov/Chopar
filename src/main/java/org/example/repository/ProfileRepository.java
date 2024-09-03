@@ -13,6 +13,8 @@ public interface ProfileRepository extends JpaRepository<ProfileEntity, Long> {
 
     Optional<ProfileEntity> findByEmailAndVisibleTrue(String email);
 
+    Optional<ProfileEntity> findByEmailAndPasswordAndVisibleTrue(String email, String password);
+
     @Transactional
     @Modifying
     @Query("update ProfileEntity set status=?2 where id=?1 ")

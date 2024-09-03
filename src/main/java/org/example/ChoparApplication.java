@@ -8,6 +8,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ChoparApplication {
     public static void main(String[] args) {
         SpringApplication.run(ChoparApplication.class, args);
-//        System.out.println(MD5Util.getMD5("1234"));
+        System.out.println(MD5Util.getMD5("1234"));
     }
 }

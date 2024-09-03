@@ -16,5 +16,4 @@ public class RegistrationDTO {
     @NotBlank(message = "password required")
     private String password;
 
-
 }
