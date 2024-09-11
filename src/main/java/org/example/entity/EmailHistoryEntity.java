@@ -16,7 +16,7 @@ public class EmailHistoryEntity extends BaseEntity{
     @Column(name = "message", columnDefinition = "text")
     private String message;
 
-    @Column(name = "email",unique = true)
+    @Column(name = "email")
     private String email;
 
 }

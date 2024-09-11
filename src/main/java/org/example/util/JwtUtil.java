@@ -11,7 +11,7 @@ public class JwtUtil {
     private static final int tokenLiveTime = 1000 * 3600 * 96;
     private static final String secretKey = "secretKeydpigerpogijekmldflkvmd;fogvkjndfk.jdfnkjfnmduydghyufgbyugbudgbdufysdgbfsujedbhsduygdhubdnwduyhbdnweuhjbdkuysydfhbwee,usbndbsmebg";
 
-    public static String encode(Long profileId, String username, ProfileRole role) {
+    public static String encode(String profileId, String username, ProfileRole role) {
         JwtBuilder jwtBuilder = Jwts.builder();
         jwtBuilder.issuedAt(new Date());
 
@@ -40,7 +40,7 @@ public class JwtUtil {
         Jws<Claims> jws = jwtParser.parseClaimsJws(token);
         Claims claims = jws.getPayload();
 
-        String id = (String) claims.get("id");
+        String id = (String) claims.get("username");
         String username = (String) claims.get("username");
         String role = (String) claims.get("role");
         if (role != null) {
@@ -49,5 +49,4 @@ public class JwtUtil {
         }
         return new JwtDTO(id);
     }
-
 }

@@ -37,7 +37,7 @@ public class SecurityUtil {
 
     }
 
-    public static Long getProfileId() {
+    public static String getProfileId() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         CustomUserDetail user = (CustomUserDetail) authentication.getPrincipal();
         return user.getProfile().getId();

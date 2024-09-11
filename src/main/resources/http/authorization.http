@@ -3,12 +3,11 @@ POST http://localhost:8080/api/v1/auth/registration
 Content-Type: application/json
 
 {
-  "name": "Vali",
-  "surname": "Eshmat",
-  "email": "codeuz91@gmail.com",
+  "name": "Ali",
+  "surname": "Aliyev",
+  "email": "zoirbektugizboev@gmail.com",
   "password": "1234"
 }
-
 
 ### login
 POST http://localhost:8080/api/v1/auth/login
@@ -20,4 +19,9 @@ Content-Type: application/json
 }
 
 ### verification
-GET http://localhost:8080/api/v1/auth/verification/7
+GET http://localhost:8080/api/v1/auth/verification/1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjUzNzYwMzEsImlkIjoxLCJyb2xlIjoiUk9MRV9VU0VSIiwidXNlcm5hbWUiOiJob2ppYWtiYXJhbmRhcXVsb3Y1QGdtYWlsLmNvbSIsImV4cCI6MTcyNTcyMTYzMSwiaXNzIjoiQ2hvcGFyIn0.Nt_sNa9jUisXR5tZxMpE6Nz9lpABhxLQ-vJ5lubE6exDVNsXj-17k0VevRJuHQHwfsdxGMkNZnrHJ9WUiniTeQ
+
+### resend
+GET http://localhost:8080/api/v1/auth/resend/codeuz91@gmail.com
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjU4MTI0NzAsImlkIjoxLCJyb2xlIjoiUk9MRV9VU0VSIiwidXNlcm5hbWUiOiJob2ppYWtiYXJhbmRhcXVsb3Y1QGdtYWlsLmNvbSIsImV4cCI6MTcyNjE1ODA3MCwiaXNzIjoiQ2hvcGFyIn0.t9-TUdnY2kVNOh5hbxTqS1HD1E2Hh55eLLqAhheO0WGDjNp7v5ml0nKb5InTEMSpVEhLFmHo9RSApgujTvwtMA

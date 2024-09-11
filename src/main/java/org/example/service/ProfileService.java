@@ -1,12 +1,9 @@
 package org.example.service;
 
 import org.example.dto.ApiResponse;
-import org.example.dto.ProfileDTO;
-import org.example.dto.record.ProfileRequest;
-import org.example.dto.record.ProfileResponse;
+import org.example.dto.profile.ProfileDTO;
 import org.example.entity.ProfileEntity;
 import org.example.repository.ProfileRepository;
-import org.example.usecase.ProfileUseCase;
 import org.springframework.stereotype.Service;
 
 @Service

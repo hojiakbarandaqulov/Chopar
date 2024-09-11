@@ -1,4 +1,4 @@
-package org.example.dto;
+package org.example.dto.profile;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;

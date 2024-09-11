@@ -1,5 +1,4 @@
 package org.example.service;
-
 import org.example.dto.history.EmailDTO;
 import org.example.entity.EmailHistoryEntity;
 import org.example.exp.AppBadException;
@@ -77,5 +76,4 @@ public class EmailHistoryService {
         emailDTO.setMessage(entity.getMessage());
         return emailDTO;
     }
-
 }

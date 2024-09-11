@@ -55,7 +55,7 @@ public class AuthorizationService {
         return ApiResponse.ok("To complete your registration please verify your email");
     }
 
-    public void sendRegistrationEmail(Long profileId, String email) {
+    public void sendRegistrationEmail(String profileId, String email) {
         // send email
         String url = "http://localhost:8080/api/v1/auth/verification/" + profileId;
         String formatText = "<style>\n" +
@@ -85,23 +85,21 @@ public class AuthorizationService {
     }
 
     // authorizationVerification
-    public String authorizationVerification(Long userId, LanguageEnum language) {
-        Optional<ProfileEntity> optional = profileRepository.findById(userId);
+    public String authorizationVerification(String userId) {
+        Optional<ProfileEntity> optional = profileRepository.findById(Long.valueOf(userId));
         if (optional.isEmpty()) {
-            String message = resourceBundleMessageSource.getMessage("user.not.found", null, new Locale(language.name()));
-            throw new AppBadException(message);
+//            String message = resourceBundleMessageSource.getMessage("user.not.found");
+            throw new AppBadException("User not found");
         }
 
         ProfileEntity entity = optional.get();
         if (!entity.getVisible() || !entity.getStatus().equals(ProfileStatus.REGISTRATION)) {
-            String message = resourceBundleMessageSource.getMessage("registration.not.completed", null, new Locale(language.name()));
-            throw  new AppBadException(message);
+//            String message = resourceBundleMessageSource.getMessage("registration.not.completed", null, new Locale(language.name()));
+            throw  new AppBadException("registration not completed");
         }
 
         profileRepository.updateStatus(userId, ProfileStatus.ACTIVE);
-//        return ApiResponse.ok("Success");
-        return resourceBundleMessageSource.getMessage("Success", null, new Locale(language.name()));
-
+        return "Success";
     }
 
     //login email
@@ -129,8 +127,8 @@ public class AuthorizationService {
     public ApiResponse<?> registrationResendEmail(String email) {
         Optional<ProfileEntity> optional = profileRepository.findByEmailAndVisibleTrue(email);
         if (optional.isEmpty()) {
-            log.error("phone not found");
-            throw new AppBadException("Phone not exists");
+            log.error("email not found");
+            throw new AppBadException("email not exists");
         }
         ProfileEntity entity = optional.get();
         emailHistoryService.isNotExpiredEmail(entity.getEmail());

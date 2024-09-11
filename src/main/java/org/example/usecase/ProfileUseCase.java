@@ -1,9 +1,7 @@
 package org.example.usecase;
 
-import jakarta.validation.Valid;
 import org.example.dto.ApiResponse;
-import org.example.dto.ProfileDTO;
-import org.example.dto.record.ProfileRequest;
+import org.example.dto.profile.ProfileDTO;
 
 public interface ProfileUseCase<REQUEST, RESPONSE> {
 

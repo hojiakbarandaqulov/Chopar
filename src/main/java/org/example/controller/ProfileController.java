@@ -2,11 +2,8 @@ package org.example.controller;
 
 import jakarta.validation.Valid;
 import org.example.dto.ApiResponse;
-import org.example.dto.ProfileDTO;
-import org.example.dto.record.ProfileRequest;
-import org.example.dto.record.ProfileResponse;
+import org.example.dto.profile.ProfileDTO;
 import org.example.service.ProfileService;
-import org.example.usecase.ProfileUseCase;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,6 +25,6 @@ public class ProfileController {
     public ResponseEntity<ApiResponse<String>> createProfile(@Valid @RequestBody ProfileDTO profileDTO) {
         ApiResponse<String> apiResponse = profileService.create(profileDTO);
         return ResponseEntity.ok(apiResponse);
-
     }
+
 }

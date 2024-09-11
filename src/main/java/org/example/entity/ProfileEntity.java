@@ -16,8 +16,12 @@ import java.time.LocalDateTime;
 //@Builder
 @Entity
 @Table(name = "profile")
-public class ProfileEntity extends BaseEntity {
+public class ProfileEntity {
+    @Id
+    @GeneratedValue(generator = "uuid-hibernate-generator")
+    @GenericGenerator(name = "uuid-hibernate-generator", strategy = "org.hibernate.id.UUIDGenerator")
 
+    private String id;
     @Column(name = "name")
     private String name;
 
@@ -44,4 +48,16 @@ public class ProfileEntity extends BaseEntity {
     @Column(name = "photo_id")
     private Integer photoId;
 
+    @Column(name = "visible")
+    private Boolean visible=Boolean.TRUE;
+
+    @Column(name = "created_date")
+    private LocalDateTime createdDate=LocalDateTime.now();
+
+    @Column(name = "updated_date")
+    private LocalDateTime updatedDate;
+
+
+    @Column(name = "brith_date")
+    private LocalDateTime brithDate;
 }
