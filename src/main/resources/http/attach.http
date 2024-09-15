@@ -1,0 +1,39 @@
+POST http://localhost:8080/attach/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="coding"; filename="coding.jpg"
+
+< D:\coding.jpg
+
+###
+GET localhost:8080/attach/open/735d9ad1-f5db-48c8-9703-f52d408d5f0c.jpg
+
+
+###
+POST http://localhost:8080/attach/upload
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="coding"; filename="coding.jpg"
+
+< C:\Users\Hp victus\Pictures\Screenshots\coding.jpg
+
+### attach get id
+GET http://localhost:8080/attach/open/493bb274-6f1a-4410-8e50-c19f1281dcc6.jpg
+
+
+### attach general to example
+GET http://localhost:8080/attach/open_general/8d49f40f-0226-4b8d-b91c-60cf76cb75ee.jpg
+
+
+### attach download
+GET http://localhost:8080/attach/download/493bb274-6f1a-4410-8e50-c19f1281dcc6.jpg
+
+
+### attach pagination
+GET http://localhost:8080/attach/pagination?page=1&size=3
+
+
+### attach delete
+DELETE http://localhost:8080/attach/delete/94484e2e-785f-42e9-960e-1e54cc932965.jpg

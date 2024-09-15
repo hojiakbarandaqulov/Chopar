@@ -11,4 +11,6 @@ public interface EmailHistoryRepository extends JpaRepository<EmailHistoryEntity
     Optional<EmailHistoryEntity> findByEmail(String email);
 
     Long countByEmailAndCreatedDateBetween(String email, LocalDateTime from, LocalDateTime to);
+
+    Optional<EmailHistoryEntity> findByCreatedDate(LocalDateTime createdDate);
 }

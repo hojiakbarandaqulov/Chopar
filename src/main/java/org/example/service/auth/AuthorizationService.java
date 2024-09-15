@@ -124,7 +124,7 @@ public class AuthorizationService {
         return ApiResponse.ok(responseDTO);
     }
 
-    public ApiResponse<?> registrationResendEmail(String email) {
+    public ApiResponse<String> registrationResendEmail(String email) {
         Optional<ProfileEntity> optional = profileRepository.findByEmailAndVisibleTrue(email);
         if (optional.isEmpty()) {
             log.error("email not found");
