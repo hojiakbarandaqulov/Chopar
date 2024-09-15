@@ -1,0 +1,37 @@
+###category create
+POST http://localhost:8080/api/v1/category/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
+
+{
+  "orderNumber": 3,
+  "nameUz": "ЖАXОНn",
+  "nameRu": "МИР",
+  "nameEn": "SOCIETY"
+}
+
+###
+PUT http://localhost:8080/api/v1/category/update/4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
+
+{
+  "orderNumber": 1,
+  "nameUz": "O'zbekiston",
+  "nameRu": "Uzbekistan",
+  "nameEn": "Узбекистан"
+}
+
+###
+DELETE http://localhost:8080/api/v1/category/delete/3
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
+
+
+###
+GET http://localhost:8080/api/v1/category/list/1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
+
+### gey by language
+GET http://localhost:8080/api/v1/category/lang
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
+

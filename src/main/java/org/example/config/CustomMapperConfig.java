@@ -15,7 +15,6 @@ public class CustomMapperConfig {
                 map().setEmail(source.getEmail());  // Maxsus moslashtirish logikasi
             }
         });
-
         return modelMapper;
     }
 }
