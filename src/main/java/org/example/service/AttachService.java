@@ -234,4 +234,15 @@ public class AttachService {
         dto.setUrl(serverUrl + "/attach/open/" + imageId);
         return dto;
     }
+
+    public void create(List<String> attachList) {
+        for (String attachId : attachList) {
+             create(attachId);
+        }
+    }
+
+    private void create(String attachId) {
+        AttachEntity attachEntity=new AttachEntity();
+        attachEntity.setId(String.valueOf(attachId));
+    }
 }

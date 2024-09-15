@@ -40,6 +40,7 @@ public class ProfileController {
         return ResponseEntity.ok(apiResponse);
     }
 
+
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/pagination")
     public ResponseEntity<ApiResponse<PageImpl<ProfileDTO>>> pagination(@RequestParam(value = "page",defaultValue = "1") int page,

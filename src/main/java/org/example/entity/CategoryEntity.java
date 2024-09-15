@@ -31,9 +31,6 @@ public class CategoryEntity {
     @Column(name = "created_date")
     private LocalDateTime createdDate;
 
-    @Column(name = "prtId")
-    private Integer prtId;
-
     @Column(name = "order_number")
     private Integer orderNumber;
 }
