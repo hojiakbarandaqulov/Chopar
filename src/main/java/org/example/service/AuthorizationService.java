@@ -55,7 +55,7 @@ public class AuthorizationService {
         return ApiResponse.ok("To complete your registration please verify your email");
     }
 
-    public void sendRegistrationEmail(String profileId, String email) {
+    public void sendRegistrationEmail(Long profileId, String email) {
         // send email
         String url = "http://localhost:8080/api/v1/auth/verification/" + profileId;
         String formatText = "<style>\n" +

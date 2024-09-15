@@ -1,6 +1,8 @@
 package org.example.dto.record;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.Builder;
 import org.example.enums.ProfileRole;
 import org.example.enums.ProfileStatus;
@@ -16,9 +18,11 @@ public record ProfileResponse(
         String password,
         ProfileStatus status,
         ProfileRole role,
-        Boolean visible,
-        LocalDateTime createdDate,
+        Integer photoId,
+        LocalDateTime brithDate,
         LocalDateTime updatedDate,
-        Integer photoId
+        Boolean visible,
+        LocalDateTime deletedDate
 ) {
+
 }

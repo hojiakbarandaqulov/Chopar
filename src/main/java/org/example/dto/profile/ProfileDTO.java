@@ -3,13 +3,12 @@ package org.example.dto.profile;
 import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.example.enums.ProfileRole;
 import org.example.enums.ProfileStatus;
 
 import java.time.LocalDateTime;
-
+@NoArgsConstructor
 @Getter
 @Setter
 public class ProfileDTO {

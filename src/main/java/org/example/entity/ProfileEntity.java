@@ -1,9 +1,7 @@
 package org.example.entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.example.enums.ProfileRole;
 import org.example.enums.ProfileStatus;
 import org.hibernate.annotations.GenericGenerator;
@@ -13,15 +11,12 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-//@Builder
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "profile")
-public class ProfileEntity {
-    @Id
-    @GeneratedValue(generator = "uuid-hibernate-generator")
-    @GenericGenerator(name = "uuid-hibernate-generator", strategy = "org.hibernate.id.UUIDGenerator")
-
-    private String id;
+public class ProfileEntity extends BaseEntity {
     @Column(name = "name")
     private String name;
 
@@ -48,16 +43,15 @@ public class ProfileEntity {
     @Column(name = "photo_id")
     private Integer photoId;
 
-    @Column(name = "visible")
-    private Boolean visible=Boolean.TRUE;
-
-    @Column(name = "created_date")
-    private LocalDateTime createdDate=LocalDateTime.now();
+    @Column(name = "brith_date")
+    private LocalDateTime brithDate;
 
     @Column(name = "updated_date")
     private LocalDateTime updatedDate;
 
+    @Column(name = "visible")
+    private Boolean visible=Boolean.TRUE;
 
-    @Column(name = "brith_date")
-    private LocalDateTime brithDate;
+    @Column(name = "deleted_date")
+    private LocalDateTime deletedDate;
 }

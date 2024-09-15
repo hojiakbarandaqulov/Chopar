@@ -2,12 +2,11 @@ package org.example.usecase;
 
 import org.example.dto.ApiResponse;
 import org.example.dto.profile.ProfileDTO;
+import org.example.entity.ProfileEntity;
 
 public interface ProfileUseCase<REQUEST, RESPONSE> {
 
-    ApiResponse<String> create(ProfileDTO profileDTO);
-
-    ApiResponse<RESPONSE> read(REQUEST request);
+    ApiResponse<ProfileEntity> create(ProfileDTO profileDTO);
 
     ApiResponse<RESPONSE> update(REQUEST request);
 
