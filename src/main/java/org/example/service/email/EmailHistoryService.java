@@ -1,8 +1,9 @@
-package org.example.service;
+package org.example.service.email;
 import org.example.dto.history.EmailDTO;
 import org.example.entity.EmailHistoryEntity;
 import org.example.exp.AppBadException;
 import org.example.repository.EmailHistoryRepository;
+import org.example.service.SmsService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

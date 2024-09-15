@@ -1,4 +1,4 @@
-package org.example.service;
+package org.example.service.auth;
 
 import lombok.extern.slf4j.Slf4j;
 import org.example.dto.ApiResponse;
@@ -6,18 +6,18 @@ import org.example.dto.auth.AuthorizationResponseDTO;
 import org.example.dto.auth.LoginDTO;
 import org.example.dto.auth.RegistrationDTO;
 import org.example.entity.ProfileEntity;
-import org.example.enums.LanguageEnum;
 import org.example.enums.ProfileRole;
 import org.example.enums.ProfileStatus;
 import org.example.exp.AppBadException;
 import org.example.repository.ProfileRepository;
+import org.example.service.email.EmailHistoryService;
+import org.example.service.email.MailSenderService;
 import org.example.util.JwtUtil;
 import org.example.util.MD5Util;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.Locale;
 import java.util.Optional;
 
 @Slf4j
@@ -55,7 +55,7 @@ public class AuthorizationService {
         return ApiResponse.ok("To complete your registration please verify your email");
     }
 
-    public void sendRegistrationEmail(String profileId, String email) {
+    public void sendRegistrationEmail(Long profileId, String email) {
         // send email
         String url = "http://localhost:8080/api/v1/auth/verification/" + profileId;
         String formatText = "<style>\n" +

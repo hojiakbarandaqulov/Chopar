@@ -1,4 +1,4 @@
-package org.example.service;
+package org.example.service.flyway;
 
 import org.flywaydb.core.Flyway;
 import org.springframework.boot.CommandLineRunner;

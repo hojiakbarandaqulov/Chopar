@@ -1,0 +1,46 @@
+### create
+POST http://localhost:8080/api/v1/profile/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDY1NjAsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTIxNjAsImlzcyI6IkNob3BhciJ9.RC7QT_cGZPgorYSqEmfhb3H6cs-nVc8YBr5ISQmfkSbuVdCiGlrRpHrLXaB8wZe0bLUkZgYNAf0KwyX-DRm9Dg
+
+{
+  "name": "Alish",
+  "surname": "Alishev",
+  "phone": "992431069",
+  "email": "hojiakbarandaqulov11@gmail.com",
+  "password": "1234",
+  "status": "ACTIVE",
+  "profileRole": "ROLE_ADMIN"
+}
+
+### update profile
+PUT http://localhost:8080/api/v1/profile/update/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
+
+{
+  "name": "ALi",
+  "surname": "Valiyev",
+  "password": "1234"
+}
+
+### ANY update
+PUT http://localhost:8080/api/v1/profile/update/10
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
+
+{
+  "name": "Alish",
+  "surname": "Alishev",
+  "password": "1234"
+}
+
+###
+PUT http://localhost:8080/api/v1/profile/pagination?page=1&size=3
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
+
+
+###
+DELETE http://localhost:8080/api/v1/profile/delete/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ

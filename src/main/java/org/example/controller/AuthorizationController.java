@@ -3,15 +3,11 @@ package org.example.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tomcat.util.http.parser.Authorization;
 import org.example.dto.ApiResponse;
 import org.example.dto.auth.LoginDTO;
 import org.example.dto.auth.RegistrationDTO;
-import org.example.enums.LanguageEnum;
-import org.example.service.AuthorizationService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.example.service.auth.AuthorizationService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j

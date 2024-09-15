@@ -5,7 +5,7 @@ Content-Type: application/json
 {
   "name": "Ali",
   "surname": "Aliyev",
-  "email": "zoirbektugizboev@gmail.com",
+  "email": "hojiakbarandaqulov5@gmail.com",
   "password": "1234"
 }
 
@@ -19,7 +19,7 @@ Content-Type: application/json
 }
 
 ### verification
-GET http://localhost:8080/api/v1/auth/verification/1
+GET http://localhost:8080/api/v1/auth/verification/2
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjUzNzYwMzEsImlkIjoxLCJyb2xlIjoiUk9MRV9VU0VSIiwidXNlcm5hbWUiOiJob2ppYWtiYXJhbmRhcXVsb3Y1QGdtYWlsLmNvbSIsImV4cCI6MTcyNTcyMTYzMSwiaXNzIjoiQ2hvcGFyIn0.Nt_sNa9jUisXR5tZxMpE6Nz9lpABhxLQ-vJ5lubE6exDVNsXj-17k0VevRJuHQHwfsdxGMkNZnrHJ9WUiniTeQ
 
 ### resend

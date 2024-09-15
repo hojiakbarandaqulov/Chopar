@@ -1,0 +1,36 @@
+### create region
+POST http://localhost:8080/api/v1/region/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
+
+{
+  "orderNumber": 1,
+  "nameUz": "Baxmal",
+  "nameRu": "бархат",
+  "nameEn": "Velvet"
+}
+
+###
+PUT http://localhost:8080/api/v1/region/update/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
+
+{
+  "orderNumber": 1,
+  "nameUz": "Naymon",
+  "nameRu": "Найман",
+  "nameEn": "Naiman"
+}
+
+###
+DELETE http://localhost:8080/api/v1/region/delete/4
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
+
+### All
+GET http://localhost:8080/api/v1/region/all
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
+
+### language
+GET http://localhost:8080/api/v1/region/lang
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
