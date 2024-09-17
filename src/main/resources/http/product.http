@@ -40,4 +40,12 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb
 
 ###
 GET http://localhost:8080/api/v1/product/pagination?page=1&size=3
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjY1OTQwNDUsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY5Mzk2NDUsImlzcyI6IkNob3BhciJ9.giz4QEe7KiB7GKrcK-Iyu6-jTqWGVAXhYx6lMhBIsGwtRVUJ_uuEE7tDvf7OTbKk-8cmHOUV8u1DPKpc01Qw2A
+
+{
+  "id": 1,
+  "name": "Lavash",
+  "description": "zor",
+  "price": 31000
+}

@@ -18,4 +18,6 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Integer>
             " end as name " +
             " from region order by order_number asc;",nativeQuery = true)
     List<RegionMapper> findAllByLanguage(@Param("language") String language);
+
+    List<ProductEntity> findByCategoryId(Integer categoryId);
 }

@@ -3,16 +3,14 @@ package org.example.service;
 import org.example.config.CustomMapperConfig;
 import org.example.dto.ApiResponse;
 import org.example.dto.product.ProductCreateDTO;
-import org.example.dto.product.ProductDTO;
+import org.example.dto.product.ProductPaginationDTO;
 import org.example.dto.region.RegionDTO;
 import org.example.entity.ProductEntity;
-import org.example.entity.ProfileEntity;
 import org.example.enums.LanguageEnum;
 import org.example.exp.AppBadException;
 import org.example.mapper.RegionMapper;
 import org.example.repository.ProductRepository;
 import org.modelmapper.ModelMapper;
-import org.springdoc.core.converters.models.Pageable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
@@ -20,19 +18,22 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.function.Consumer;
 
 @Service
 public class ProductService {
     private static final ModelMapper modelMapper = CustomMapperConfig.customModelMapper();
+
     private final ProductRepository productRepository;
 
+    private final  CategoryService categoryService;
     private final AttachService attachService;
 
-    public ProductService(ProductRepository productRepository, AttachService attachService) {
+    public ProductService(ProductRepository productRepository, CategoryService categoryService, AttachService attachService) {
         this.productRepository = productRepository;
+        this.categoryService = categoryService;
         this.attachService = attachService;
     }
 
@@ -65,8 +66,8 @@ public class ProductService {
         return ApiResponse.ok(true);
     }
 
-    public ApiResponse<PageImpl<ProductDTO>> pagination(int page, int size, Integer categoryId, LanguageEnum language) {
-        ProductEntity entity = get(categoryId);
+    public ApiResponse<PageImpl<ProductPaginationDTO>> pagination(int page, int size, ProductPaginationDTO productPaginationDTO, LanguageEnum language) {
+        List<ProductEntity> categoryId =  productRepository.findByCategoryId(productPaginationDTO.getId());
         List<RegionMapper> byLanguage = productRepository.findAllByLanguage(language.name());
 
         List<RegionDTO> dtos = new LinkedList<>();
@@ -79,11 +80,12 @@ public class ProductService {
         Sort sort = Sort.by(Sort.Direction.DESC, "createdDate");
         PageRequest pageable = PageRequest.of(page, size, sort);
         Page<ProductEntity> pageEntity = productRepository.findAll(pageable);
-        List<ProductDTO> dtoList = new LinkedList<>();
+        List<ProductPaginationDTO> dtoList = new LinkedList<>();
         for (ProductEntity productEntity: pageEntity.getContent()){
-            dtoList.add(modelMapper.map(productEntity, ProductDTO.class));
+            dtoList.add(modelMapper.map(productEntity, ProductPaginationDTO.class));
         }
         long count = pageEntity.getTotalElements();
         return ApiResponse.ok(new PageImpl<>(dtoList, pageable, count));
     }
+
 }
