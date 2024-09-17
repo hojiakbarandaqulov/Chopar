@@ -1070,3 +1070,35 @@ Caused by: java.lang.IllegalStateException: Using named parameters for method pu
 17 Sep 2024 - 22:32:26.962 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 17 Sep 2024 - 22:32:26.964 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 17 Sep 2024 - 22:32:26.969 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+17 Sep 2024 - 22:32:30.885 [main] INFO  org.example.ChoparApplication - Starting ChoparApplication using Java 17.0.10 with PID 15084 (D:\Code_uz\Hojiakbar\JDBC_Spring_Project\Spring_Project\Chopar\target\classes started by Hp victus in D:\Code_uz\Hojiakbar\JDBC_Spring_Project\Spring_Project\Chopar)
+17 Sep 2024 - 22:32:30.894 [main] INFO  org.example.ChoparApplication - The following 1 profile is active: "dev"
+17 Sep 2024 - 22:32:31.739 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+17 Sep 2024 - 22:32:31.809 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 6 JPA repository interfaces.
+17 Sep 2024 - 22:32:32.310 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+17 Sep 2024 - 22:32:32.318 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+17 Sep 2024 - 22:32:32.318 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+17 Sep 2024 - 22:32:32.368 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+17 Sep 2024 - 22:32:32.368 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1443 ms
+17 Sep 2024 - 22:32:32.527 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+17 Sep 2024 - 22:32:32.572 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+17 Sep 2024 - 22:32:32.597 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+17 Sep 2024 - 22:32:32.846 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+17 Sep 2024 - 22:32:32.871 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+17 Sep 2024 - 22:32:32.994 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7827d7b
+17 Sep 2024 - 22:32:32.995 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+17 Sep 2024 - 22:32:33.027 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+17 Sep 2024 - 22:32:33.836 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+17 Sep 2024 - 22:32:33.918 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+17 Sep 2024 - 22:32:34.103 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+17 Sep 2024 - 22:32:35.036 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+17 Sep 2024 - 22:32:35.068 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+17 Sep 2024 - 22:32:35.069 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+17 Sep 2024 - 22:32:35.635 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+17 Sep 2024 - 22:32:35.645 [main] INFO  org.example.ChoparApplication - Started ChoparApplication in 5.062 seconds (process running for 5.491)
+17 Sep 2024 - 22:32:35.769 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/chopar_db (PostgreSQL 14.11)
+17 Sep 2024 - 22:32:35.816 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 3 migrations (execution time 00:00.028s)
+17 Sep 2024 - 22:32:35.833 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 2
+17 Sep 2024 - 22:32:35.836 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+17 Sep 2024 - 22:32:39.812 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+17 Sep 2024 - 22:32:39.813 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+17 Sep 2024 - 22:32:39.814 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
