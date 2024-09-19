@@ -42,7 +42,7 @@ public class ProductEntity {
     private Double rating;
 
     @Column(name = "view_count")
-    private Integer vieCount;
+    private Integer viewCount;
 
     @Column(name = "category_id")
     private Integer categoryId;

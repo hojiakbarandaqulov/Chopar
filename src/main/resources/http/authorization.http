@@ -5,7 +5,7 @@ Content-Type: application/json
 {
   "name": "Ali",
   "surname": "Aliyev",
-  "email": "hojiakbarandaqulov5@gmail.com",
+  "email": "hojiakbarandaqulov11@gmail.com",
   "password": "1234"
 }
 
@@ -14,13 +14,13 @@ POST http://localhost:8080/api/v1/auth/login
 Content-Type: application/json
 
 {
-  "email": "hojiakbarandaqulov5@gmail.com",
+  "email": "hojiakbarandaqulov11@gmail.com",
   "password": "1234"
 }
 
 ### verification
-GET http://localhost:8080/api/v1/auth/verification/2
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjUzNzYwMzEsImlkIjoxLCJyb2xlIjoiUk9MRV9VU0VSIiwidXNlcm5hbWUiOiJob2ppYWtiYXJhbmRhcXVsb3Y1QGdtYWlsLmNvbSIsImV4cCI6MTcyNTcyMTYzMSwiaXNzIjoiQ2hvcGFyIn0.Nt_sNa9jUisXR5tZxMpE6Nz9lpABhxLQ-vJ5lubE6exDVNsXj-17k0VevRJuHQHwfsdxGMkNZnrHJ9WUiniTeQ
+GET http://localhost:8080/api/v1/auth/verification/13
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjY3MTgxOTQsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjcwNjM3OTQsImlzcyI6IkNob3BhciJ9.RPac80mucLTPqbUIEW44TxOktS0fTiFpMnW0oaKbbjV8k6_NVcTR2q7KWc9AgLLW6oPoAaOPPansePfkNzWbPg
 
 ### resend
 GET http://localhost:8080/api/v1/auth/resend/codeuz91@gmail.com

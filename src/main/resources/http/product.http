@@ -1,51 +1,64 @@
 ### product create
 POST http://localhost:8080/api/v1/product/create
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjY1OTQwNDUsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY5Mzk2NDUsImlzcyI6IkNob3BhciJ9.giz4QEe7KiB7GKrcK-Iyu6-jTqWGVAXhYx6lMhBIsGwtRVUJ_uuEE7tDvf7OTbKk-8cmHOUV8u1DPKpc01Qw2A
 
 {
-  "orderNumber": 1,
-  "nameUz": "Pitsa",
-  "nameRu": "пицца",
-  "nameEn": "Pizza",
-  "descriptionUz": "zor",
-  "descriptionRu": "трудный",
+  "orderNumber": 6,
+  "nameUz": "Pitsaaa",
+  "nameRu": "пиццаaa",
+  "nameEn": "Pizzaaa",
+  "descriptionUz": "zorr",
+  "descriptionRu": "трудныйs",
   "descriptionEn": "difficult",
   "price": 31000,
   "attachList": ["22793717-c7dc-49b5-98dc-758e6ac2c56f"],
-  "categoryId": 4
+  "categoryId": 5
 }
 
 ###
-POST http://localhost:8080/api/v1/product/update/1
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
-
-{
-  "orderNumber": 1,
-  "nameUz": "Pitsa",
-  "nameRu": "пицца",
-  "nameEn": "Pizza",
-  "descriptionUz": "zor",
-  "descriptionRu": "трудный",
-  "descriptionEn": "difficult",
-  "price": 31000,
-  "attachList": ["22793717-c7dc-49b5-98dc-758e6ac2c56f"],
-  "categoryId": 1
-}
-
-###
-DELETE http://localhost:8080/api/v1/product/delete/3
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjYyNDcwMjYsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY1OTI2MjYsImlzcyI6IkNob3BhciJ9.wy18QP0n-PGaWKAj_GXBiejmjNANPg55oLYuwozaJiHQ_u8dmHBOD5jE-W-88tfKTY4ukK2ObE7UmEWE0h14TQ
-
-###
-GET http://localhost:8080/api/v1/product/pagination?page=1&size=3
+PUT http://localhost:8080/api/v1/product/update/5
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjY1OTQwNDUsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY5Mzk2NDUsImlzcyI6IkNob3BhciJ9.giz4QEe7KiB7GKrcK-Iyu6-jTqWGVAXhYx6lMhBIsGwtRVUJ_uuEE7tDvf7OTbKk-8cmHOUV8u1DPKpc01Qw2A
 
 {
-  "id": 1,
-  "name": "Lavash",
-  "description": "zor",
-  "price": 31000
+  "orderNumber": 1,
+  "nameUz": "Pitsa",
+  "nameRu": "пицца",
+  "nameEn": "Pizza",
+  "descriptionUz": "zor",
+  "descriptionRu": "трудный",
+  "descriptionEn": "difficult",
+  "price": 31000,
+  "attachList": ["22793717-c7dc-49b5-98dc-758e6ac2c56f"],
+  "categoryId": 5
 }
+
+###
+DELETE http://localhost:8080/api/v1/product/delete/3
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjY1OTQwNDUsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY5Mzk2NDUsImlzcyI6IkNob3BhciJ9.giz4QEe7KiB7GKrcK-Iyu6-jTqWGVAXhYx6lMhBIsGwtRVUJ_uuEE7tDvf7OTbKk-8cmHOUV8u1DPKpc01Qw2A
+
+### product pagination not finish
+GET http://localhost:8080/api/v1/product/pagination?page=1&size=3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjY1OTQwNDUsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY5Mzk2NDUsImlzcyI6IkNob3BhciJ9.giz4QEe7KiB7GKrcK-Iyu6-jTqWGVAXhYx6lMhBIsGwtRVUJ_uuEE7tDvf7OTbKk-8cmHOUV8u1DPKpc01Qw2A
+
+###
+GET http://localhost:8080/api/v1/product/productFive
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjY1OTQwNDUsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY5Mzk2NDUsImlzcyI6IkNob3BhciJ9.giz4QEe7KiB7GKrcK-Iyu6-jTqWGVAXhYx6lMhBIsGwtRVUJ_uuEE7tDvf7OTbKk-8cmHOUV8u1DPKpc01Qw2A
+
+###
+GET http://localhost:8080/api/v1/product/productToSee
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjY1OTQwNDUsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY5Mzk2NDUsImlzcyI6IkNob3BhciJ9.giz4QEe7KiB7GKrcK-Iyu6-jTqWGVAXhYx6lMhBIsGwtRVUJ_uuEE7tDvf7OTbKk-8cmHOUV8u1DPKpc01Qw2A
+
+###
+GET http://localhost:8080/api/v1/product/client
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjY3MTgyMjgsImlkIjoxMywicm9sZSI6IlJPTEVfVVNFUiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92MTFAZ21haWwuY29tIiwiZXhwIjoxNzI3MDYzODI4LCJpc3MiOiJDaG9wYXIifQ.ok7W0DI-6p8NLJGoZe1kw3mguxbKJYUyMxOgmpdkOOZm1YDvAjnryJr9oUF0EjuO9g9WMRW6kQW52AEgnXeO2g
+
+###
+GET http://localhost:8080/api/v1/product/byId/4
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjY1OTQwNDUsImlkIjoyLCJyb2xlIjoiUk9MRV9BRE1JTiIsInVzZXJuYW1lIjoiaG9qaWFrYmFyYW5kYXF1bG92NUBnbWFpbC5jb20iLCJleHAiOjE3MjY5Mzk2NDUsImlzcyI6IkNob3BhciJ9.giz4QEe7KiB7GKrcK-Iyu6-jTqWGVAXhYx6lMhBIsGwtRVUJ_uuEE7tDvf7OTbKk-8cmHOUV8u1DPKpc01Qw2A
+
+
+
+
