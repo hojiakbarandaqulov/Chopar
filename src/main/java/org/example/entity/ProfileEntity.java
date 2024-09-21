@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 @Table(name = "profile")
 public class ProfileEntity extends BaseEntity {
 
+
     @Column(name = "name")
     private String name;
 

@@ -17,6 +17,7 @@ public class BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @UuidGenerator
     private Long id;
 
     @Column(name = "created_date")

@@ -11,7 +11,8 @@ public class JwtUtil {
     private static final int tokenLiveTime = 1000 * 3600 * 96;
     private static final String secretKey = "secretKeydpigerpogijekmldflkvmd;fogvkjndfk.jdfnkjfnmduydghyufgbyugbudgbdufysdgbfsujedbhsduygdhubdnwduyhbdnweuhjbdkuysydfhbwee,usbndbsmebg";
 
-    public static String encode(Long profileId, String username, ProfileRole role) {
+    public static String encode(Long
+                                        profileId, String username, ProfileRole role) {
         JwtBuilder jwtBuilder = Jwts.builder();
         jwtBuilder.issuedAt(new Date());
 
