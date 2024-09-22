@@ -31,7 +31,6 @@ public class ProductService {
     private static final ModelMapper modelMapper = CustomMapperConfig.customModelMapper();
 
     private final ProductRepository productRepository;
-
     private final CategoryService categoryService;
     private final AttachService attachService;
 

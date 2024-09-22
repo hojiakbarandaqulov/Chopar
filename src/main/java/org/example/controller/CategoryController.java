@@ -56,4 +56,5 @@ public class CategoryController {
         ApiResponse<List<CategoryDTO>> apiResponse=categoryService.getByLang(language);
         return ResponseEntity.ok(apiResponse);
     }
+
 }
