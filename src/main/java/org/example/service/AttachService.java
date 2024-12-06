@@ -76,7 +76,6 @@ public class AttachService {
             return new byte[0];
         }
     }*/
-
     public byte[] load(String attachId) {
         BufferedImage originalImage;
         try {

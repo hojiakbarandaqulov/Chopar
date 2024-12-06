@@ -1,1 +1,43 @@
-22 Sep 2024 - 18:57:32.135 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18h17m42s336ms866µs300ns).
+28 Dec 2024 - 17:30:55.452 [main] INFO  org.example.ChoparApplication - Starting ChoparApplication using Java 17.0.12 with PID 12784 (D:\JavaProject\Chopar\target\classes started by Xojiakbar in D:\JavaProject\Chopar)
+28 Dec 2024 - 17:30:55.476 [main] INFO  org.example.ChoparApplication - The following 1 profile is active: "dev"
+28 Dec 2024 - 17:30:56.783 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+28 Dec 2024 - 17:30:56.877 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 85 ms. Found 7 JPA repository interfaces.
+28 Dec 2024 - 17:30:57.652 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+28 Dec 2024 - 17:30:57.666 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+28 Dec 2024 - 17:30:57.666 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+28 Dec 2024 - 17:30:57.754 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+28 Dec 2024 - 17:30:57.755 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2216 ms
+28 Dec 2024 - 17:30:57.909 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+28 Dec 2024 - 17:30:58.007 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+28 Dec 2024 - 17:30:58.063 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+28 Dec 2024 - 17:30:58.470 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+28 Dec 2024 - 17:30:58.501 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+28 Dec 2024 - 17:30:58.736 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@8549c5f
+28 Dec 2024 - 17:30:58.739 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+28 Dec 2024 - 17:30:58.798 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+28 Dec 2024 - 17:31:00.139 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+28 Dec 2024 - 17:31:00.323 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+28 Dec 2024 - 17:31:00.324 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk9d5dpsf2ufa6rjbi3y0elkdcd" of relation "profile" does not exist, skipping
+28 Dec 2024 - 17:31:00.327 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Warning Code: 0, SQLState: 00000
+28 Dec 2024 - 17:31:00.327 [main] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - constraint "uk8601nsl7q0424f5tt4sw9ye7h" of relation "profile" does not exist, skipping
+28 Dec 2024 - 17:31:00.341 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+28 Dec 2024 - 17:31:00.614 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+28 Dec 2024 - 17:31:02.235 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+28 Dec 2024 - 17:31:02.276 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+28 Dec 2024 - 17:31:02.278 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+28 Dec 2024 - 17:31:03.185 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+28 Dec 2024 - 17:31:03.196 [main] INFO  org.example.ChoparApplication - Started ChoparApplication in 8.339 seconds (process running for 9.161)
+28 Dec 2024 - 17:31:03.361 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/chopar (PostgreSQL 14.13)
+28 Dec 2024 - 17:31:03.419 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "public"."flyway_schema_history" does not exist yet
+28 Dec 2024 - 17:31:03.423 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.020s)
+28 Dec 2024 - 17:31:03.446 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "public"."flyway_schema_history" with baseline ...
+28 Dec 2024 - 17:31:03.486 [main] INFO  o.f.core.internal.command.DbBaseline - Successfully baselined schema with version: 1
+28 Dec 2024 - 17:31:03.508 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+28 Dec 2024 - 17:31:03.520 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "2 - profile init"
+28 Dec 2024 - 17:31:03.529 [main] INFO  o.f.c.i.s.DefaultSqlScriptExecutor - +--------+
+| setval |
++--------+
+| 1      |
++--------+
+
+28 Dec 2024 - 17:31:03.544 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "public", now at version v2 (execution time 00:00.012s)

@@ -144,7 +144,7 @@ public class OrderService {
         return ApiResponse.ok(new PageImpl<>(list,pageable,total));
     }
 
-    public PageImpl<OrderDTO> filter(OrderFilterDTO orderFilterDTO, int page, int size) {
+   /* public PageImpl<OrderDTO> filter(OrderFilterDTO orderFilterDTO, int page, int size) {
         FilterResponseDTO<OrderEntity> filter = orderCustomRepository.filter(orderFilterDTO, page, size);
         List<OrderDTO>list = new LinkedList<>();
         for (OrderEntity orderEntity:filter.getContent()){
@@ -160,5 +160,5 @@ public class OrderService {
         }
         return new PageImpl<OrderDTO>(list,PageRequest.of(page,size), filter.getTotalCount());
 
-    }
+    }*/
 }

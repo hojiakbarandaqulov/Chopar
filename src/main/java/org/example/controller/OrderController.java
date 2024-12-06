@@ -86,12 +86,12 @@ public class OrderController {
         return ResponseEntity.ok(apiResponse);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+   /* @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/filter")
     public ResponseEntity<PageImpl<OrderDTO>> filter(@RequestParam(value = "page", defaultValue = "1") int page,
                                                      @RequestParam(value = "size", defaultValue = "10") int size,
                                                      OrderFilterDTO orderFilterDTO) {
         PageImpl<OrderDTO> filter = orderService.filter(orderFilterDTO, page - 1, size);
         return ResponseEntity.ok().body(filter);
-    }
+    }*/
 }
