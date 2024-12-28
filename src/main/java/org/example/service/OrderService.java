@@ -14,6 +14,7 @@ import org.example.enums.ProfileRole;
 import org.example.exp.AppBadException;
 import org.example.repository.OrderRepository;
 import org.example.repository.ProductRepository;
+import org.example.repository.customRepository.OrderCustomRepository;
 import org.modelmapper.ModelMapper;
 import org.springdoc.core.converters.models.Pageable;
 import org.springframework.data.domain.Page;
@@ -33,11 +34,12 @@ public class OrderService {
 
     private final ProfileService profileService;
     private final OrderRepository orderRepository;
+    private final OrderCustomRepository orderCustomRepository;
 
-    public OrderService(OrderRepository orderRepository, ProfileService profileService/*, OrderCustomRepository orderCustomRepository*/) {
+    public OrderService(OrderRepository orderRepository, ProfileService profileService, OrderCustomRepository orderCustomRepository) {
         this.orderRepository = orderRepository;
         this.profileService = profileService;
-//        this.orderCustomRepository = orderCustomRepository;
+        this.orderCustomRepository = orderCustomRepository;
     }
 
     public ApiResponse<OrderEntity> create(OrderCreateDTO order) {
@@ -144,7 +146,7 @@ public class OrderService {
         return ApiResponse.ok(new PageImpl<>(list,pageable,total));
     }
 
-   /* public PageImpl<OrderDTO> filter(OrderFilterDTO orderFilterDTO, int page, int size) {
+    public PageImpl<OrderDTO> filter(OrderFilterDTO orderFilterDTO, int page, int size) {
         FilterResponseDTO<OrderEntity> filter = orderCustomRepository.filter(orderFilterDTO, page, size);
         List<OrderDTO>list = new LinkedList<>();
         for (OrderEntity orderEntity:filter.getContent()){
@@ -160,5 +162,5 @@ public class OrderService {
         }
         return new PageImpl<OrderDTO>(list,PageRequest.of(page,size), filter.getTotalCount());
 
-    }*/
+    }
 }
