@@ -13,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/order")
 public class OrderController {
@@ -73,8 +75,8 @@ public class OrderController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/list/{id}")
-    public ResponseEntity<ApiResponse<OrderEntity>> list(@PathVariable Integer id) {
-        ApiResponse<OrderEntity> apiResponse = orderService.list(id);
+    public ResponseEntity<ApiResponse<List<OrderDTO>>> list(@PathVariable Integer id) {
+        ApiResponse<List<OrderDTO>> apiResponse = orderService.list(id);
         return ResponseEntity.ok(apiResponse);
     }
 

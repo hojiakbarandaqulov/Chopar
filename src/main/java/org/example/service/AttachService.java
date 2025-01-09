@@ -214,7 +214,7 @@ public class AttachService {
             AttachDTO dto = toDTO(entity);
             list.add(dto);
         }
-        Long total = pageObj.getTotalElements();
+        long total = pageObj.getTotalElements();
         return new PageImpl<AttachDTO>(list, pageable, total);
     }
 

@@ -26,6 +26,7 @@ import java.util.function.Function;
 public class ProfileService {
     private static final ModelMapper modelMapper = CustomMapperConfig.customModelMapper();
 
+
     private final ProfileRepository profileRepository;
 
     public ProfileService(ProfileRepository profileRepository) {

@@ -45,14 +45,15 @@ public class RegionService {
     }
 
     public ApiResponse<Boolean> delete(Integer id) {
-        RegionEntity regionEntity = get(id);
-        regionRepository.delete(regionEntity);
+        if (!regionRepository.existsById(id)){
+            throw new AppBadException("Region not found");
+        }
+        regionRepository.deleteById(id);
         return ApiResponse.ok(true);
     }
 
     public ApiResponse<List<RegionDTO>> getList() {
         Iterable<RegionEntity> entity= regionRepository.findAll();
-
         List<RegionDTO> dtos = new LinkedList<>();
         for (RegionEntity regionEntity : entity) {
             dtos.add(modelMapper.map(regionEntity, RegionDTO.class));

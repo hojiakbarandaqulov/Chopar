@@ -50,10 +50,9 @@ public class ProductController {
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/pagination")
     public ResponseEntity<ApiResponse<PageImpl<ProductPaginationDTO>>> pagination(@RequestParam(value = "page", defaultValue = "1") int page,
-                                                                                  @RequestParam(value = "size", defaultValue = "10") int size
-
-            /* @RequestHeader(value = "Accept-Language", defaultValue = "UZ") LanguageEnum language*/) {
-        ApiResponse<PageImpl<ProductPaginationDTO>> apiResponse = productService.pagination(page - 1, size);
+                                                                                  @RequestParam(value = "size", defaultValue = "10") int size,
+                                                                                  @RequestHeader(value = "Accept-Language", defaultValue = "UZ") LanguageEnum language) {
+        ApiResponse<PageImpl<ProductPaginationDTO>> apiResponse = productService.pagination(page - 1, size,language );
         return ResponseEntity.ok(apiResponse);
     }
 
@@ -74,7 +73,7 @@ public class ProductController {
     @PreAuthorize("hasRole('USER')")
     @GetMapping("/client")
     public ResponseEntity<ApiResponse<ProductClientDTO>> client(/*@PathVariable Integer id,*/
-                                                                @RequestHeader(value = "Accept-Language", defaultValue = "UZ") LanguageEnum language) {
+            @RequestHeader(value = "Accept-Language", defaultValue = "UZ") LanguageEnum language) {
         ApiResponse<ProductClientDTO> apiResponse = productService.clientProduct(language);
         return ResponseEntity.ok(apiResponse);
     }

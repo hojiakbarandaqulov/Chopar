@@ -12,6 +12,7 @@ import org.example.entity.ProfileEntity;
 import org.example.enums.OrderStatus;
 import org.example.enums.ProfileRole;
 import org.example.exp.AppBadException;
+import org.example.mapper.OrderMapper;
 import org.example.repository.OrderRepository;
 import org.example.repository.ProductRepository;
 import org.example.repository.customRepository.OrderCustomRepository;
@@ -32,11 +33,13 @@ import java.util.Optional;
 public class OrderService {
     private static ModelMapper modelMapper = CustomMapperConfig.customModelMapper();
 
+    private final OrderMapper orderMapper;
     private final ProfileService profileService;
     private final OrderRepository orderRepository;
     private final OrderCustomRepository orderCustomRepository;
 
-    public OrderService(OrderRepository orderRepository, ProfileService profileService, OrderCustomRepository orderCustomRepository) {
+    public OrderService(OrderMapper orderMapper, OrderRepository orderRepository, ProfileService profileService, OrderCustomRepository orderCustomRepository) {
+        this.orderMapper = orderMapper;
         this.orderRepository = orderRepository;
         this.profileService = profileService;
         this.orderCustomRepository = orderCustomRepository;
@@ -118,18 +121,13 @@ public class OrderService {
         return ApiResponse.ok(orderEntity);
     }
 
-    public ApiResponse<OrderEntity> list(Integer id) {
+    public ApiResponse<List<OrderDTO>> list(Integer id) {
         OrderEntity orderEntity = get(id);
+        List<OrderDTO> dtoList = new LinkedList<>();
         if (orderEntity!=null) {
-            orderEntity.setProductId(orderEntity.getProductId());
-            orderEntity.setAmount(orderEntity.getAmount());
-            orderEntity.setProfileId(orderEntity.getProfileId());
-            orderEntity.setDeliveredAddress(orderEntity.getDeliveredAddress());
-            orderEntity.setDeliveredContact(orderEntity.getDeliveredContact());
-            orderEntity.setCreatedDate(orderEntity.getCreatedDate());
-            orderEntity.setStatus(orderEntity.getStatus());
+            dtoList.add(orderMapper.toDto(orderEntity));
         }
-        return ApiResponse.ok(orderEntity);
+        return ApiResponse.ok(dtoList);
     }
 
     public ApiResponse<PageImpl<OrderDTO>> pagination(int page, int size) {

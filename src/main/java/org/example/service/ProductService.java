@@ -71,7 +71,7 @@ public class ProductService {
         return ApiResponse.ok(true);
     }
 
-    public ApiResponse<PageImpl<ProductPaginationDTO>> pagination(int page, int size/* LanguageEnum language*/) {
+    public ApiResponse<PageImpl<ProductPaginationDTO>> pagination(int page, int size, LanguageEnum language) {
 //        List<ProductEntity> categoryId =  productRepository.findByCategoryId(productPaginationDTO.getId());
 //        List<ProductMapper> byLanguage = productRepository.findAllByLanguage(language.name());
 

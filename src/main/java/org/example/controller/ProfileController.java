@@ -34,12 +34,12 @@ public class ProfileController {
         ApiResponse<Boolean> apiResponse=profileService.update(profileDTO, profileId);
         return ResponseEntity.ok(apiResponse);
     }
+
     @PutMapping("/update/all/{id}")
     public ResponseEntity<ApiResponse<Boolean>> updateProfileAny(@Valid @PathVariable("id") Long profileId, @RequestBody ProfileUpdateDTO profileDTO){
         ApiResponse<Boolean> apiResponse=profileService.updateAll(profileDTO, profileId);
         return ResponseEntity.ok(apiResponse);
     }
-
 
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/pagination")
